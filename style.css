@@ -1,0 +1,31 @@
+h1 {
+  color: red;
+}
+
+.kartya {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 100px;
+  height: 200px;
+
+  box-shadow: 2px 2px 8px 0px #0000007d;
+  background-image: linear-gradient(rgb(201 201 201), rgb(247 247 247)),
+    url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png);
+  background-blend-mode: hard-light;
+  background-size: 250%;
+  background-position: center;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pokemonName {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
