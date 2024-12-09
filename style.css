@@ -16,7 +16,8 @@ h1 {
   background-position: center;
 }
 
-#container {
+#container,
+#masikhely {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;

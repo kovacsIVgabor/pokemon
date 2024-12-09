@@ -10,12 +10,14 @@ function addImg(src, alt, target) {
   Elem.alt = alt
   target.appendChild(Elem)
 }
+var kontener
 async function letolt() {
   const url = 'https://pokeapi.co/api/v2/pokemon/'
   const response = await fetch(url)
   const data = await response.json()
 
-  const kontener = document.querySelector('#container')
+  kontener = document.querySelector('#container')
+  const masikhely = document.querySelector('#masikhely') // <-------------
 
   for (let i = 0; i < data.results.length; i++) {
     const url_pokemon = data.results[i].url
@@ -31,6 +33,14 @@ async function letolt() {
     addImg(data_pokemon.sprites.front_default, data.results[i].name, kartya)
     let name = addDiv(data.results[i].name, kartya)
     name.classList.add('pokemonName')
+    kartya.addEventListener('click', function () {
+      // <-------------
+      if (this.parentElement == kontener) {
+        masikhely.appendChild(this)
+      } else {
+        kontener.appendChild(this)
+      }
+    })
   }
 }
 letolt()
